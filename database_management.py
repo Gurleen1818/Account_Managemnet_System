@@ -133,3 +133,10 @@ def update_partition_table(account):
         data2 = (x.partition_name, x.partition_balance)
         my_cursor.execute(query2, data2)
         mydb.commit()
+
+
+def view_partitions_table(account):
+    query = f"Select * from {account.name}_Partitions"
+    my_cursor.execute(query)
+    partition_table = from_db_cursor(my_cursor)
+    print(partition_table)
