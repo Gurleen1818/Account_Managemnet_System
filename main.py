@@ -1,5 +1,5 @@
 from account_class import MainAccount, transfer, transaction, pickle_everything, unpickle_everything
-from database_management import create_new_account_in_db, view_passbook
+from database_management import create_new_account_in_db, view_passbook, view_partitions_table
 
 # uncomment the line below if using for the first time
 # main_accounts = []
@@ -21,7 +21,7 @@ def account_menu(chosen_account):
         account_menu(chosen_account)
 
     elif choice4 == 2:
-        chosen_account.view_partitions()
+        view_partitions_table(chosen_account)
         account_menu(chosen_account)
 
     elif choice4 == 3:
